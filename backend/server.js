@@ -35,7 +35,7 @@ app.use(morgan("dev"));
 app.get("/", (req, res) => {
     res.status(200).json({
         success: true,
-        message: "Welcome to the CodeShelf API 🚀",
+        message: "CodeShelf API is running.",
     });
 });
 
@@ -48,7 +48,7 @@ app.use(errorHandler);
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-    console.log(
-        `🚀 CodeShelf Backend running on http://localhost:${PORT}`
+    console.info(
+        `CodeShelf Backend running on http://localhost:${PORT}`
     );
 });

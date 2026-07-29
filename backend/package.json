@@ -1,11 +1,24 @@
 {
   "name": "codeshelf-backend",
   "version": "1.0.0",
+  "description": "Backend API for CodeShelf - A MERN-based developer code snippet manager.",
+  "author": "Tejender Singh",
+  "license": "MIT",
   "type": "module",
+  "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js"
   },
+  "keywords": [
+    "mern",
+    "nodejs",
+    "express",
+    "mongodb",
+    "jwt",
+    "api",
+    "codeshelf"
+  ],
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "cookie-parser": "^1.4.7",
