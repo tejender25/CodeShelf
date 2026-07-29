@@ -77,9 +77,7 @@ export default function Explore() {
                 );
 
             const response = data.data || data;
-            console.log("Parsed Response:", response);
-console.log("response.snippets:", response.snippets);
-console.log("Is Array?", Array.isArray(response.snippets));
+            
 setSnippets(response.snippets || []);
         } catch (error) {
             toast.error(
@@ -210,8 +208,6 @@ setSnippets(response.snippets || []);
             keyword,
             language,
         ]);
-        console.log("snippets state:", snippets);
-console.log("Is snippets array?", Array.isArray(snippets));
     return (
         <Layout>
             <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-5 mb-8">

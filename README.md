@@ -1,212 +1,296 @@
-# CodeShelf
+# 🚀 CodeShelf
 
-> **Your Personal Developer Code Library**
-
-CodeShelf is a production-ready MERN Stack application that allows developers to securely save, organize, search, and share reusable code snippets.
+*A full-stack MERN application for securely storing, organizing, and sharing reusable code snippets.*
 
 ---
 
-# Features
+## 🌐 Live Demo
 
-## Authentication
+**Frontend:** https://code-shelf-olive.vercel.app
 
-- Register
-- Login
-- JWT Authentication
-- Protected Routes
-- Persistent Login
-- Logout
+**Backend API:** https://codeshelf-3ss4.onrender.com
 
 ---
+
+# 📸 Screenshots
 
 ## Dashboard
 
-- Welcome Card
-- Statistics
-    - Total Snippets
-    - Public Snippets
-    - Private Snippets
-    - Favorite Snippets
-- Recent Snippets
+![Dashboard](./screenshots/dashboard.png)
 
 ---
 
-## Snippet Management
+## Login
+
+![Login](./screenshots/login.png)
+
+---
+
+## My Snippets
+
+![My Snippets](./screenshots/mysnippets.png)
+
+---
+
+## Explore Public Snippets
+
+![Explore](./screenshots/explore.png)
+
+---
+
+# 📖 Overview
+
+CodeShelf is a full-stack MERN application that allows developers to securely save, organize, search, and manage reusable code snippets.
+
+Users can authenticate using JWT, create private or public snippets, organize them using tags, mark favorites, and edit or delete snippets through a responsive interface powered by the Monaco code editor.
+
+The backend follows a layered architecture using Routes, Controllers, Services, Models, and Middleware for clean and scalable code.
+
+---
+
+# ✨ Features
+
+### Authentication
+
+- User Registration
+- User Login
+- JWT Authentication
+- Protected Routes
+- Persistent Login
+
+### Snippet Management
 
 - Create Snippet
 - Edit Snippet
 - Delete Snippet
 - Duplicate Snippet
-- Favorite Snippet
-- Download Snippet
-- Copy Code
-- Public / Private Visibility
+- Favorite / Unfavorite
+
+### Organization
+
+- Public / Private Snippets
+- Tags
+- Language Support
+- Search
+- Sorting
+
+### Dashboard
+
+- Total Snippets
+- Public Snippets
+- Private Snippets
+- Favorite Snippets
+
+### User Experience
+
+- Monaco Code Editor
+- Syntax Highlighting
+- Responsive Design
+- Dark / Light Theme
+- Toast Notifications
 
 ---
 
-## Search
-
-- Search by Title
-- Search by Tags
-- Search by Language
-
----
-
-## Filters
-
-- Language Filter
-- Favorites
-- Public
-- Private
-
----
-
-## Public Explore
-
-Browse snippets shared by all users.
-
----
-
-## Syntax Highlighting
-
-Supports
-
-- C++
-- Java
-- Python
-- JavaScript
-- TypeScript
-- Go
-- Rust
-- PHP
-- SQL
-
----
-
-# Tech Stack
+# 🛠 Tech Stack
 
 ## Frontend
 
 - React 19
 - Vite
+- Tailwind CSS
 - React Router DOM
 - Axios
-- Tailwind CSS
-- React Hot Toast
+- Monaco Editor
 - React Syntax Highlighter
+- React Hot Toast
 - React Icons
 
 ## Backend
 
 - Node.js
-- Express
-- MongoDB
+- Express.js
+- MongoDB Atlas
 - Mongoose
-- JWT
+- JWT Authentication
 - bcryptjs
 - dotenv
-- cors
+- CORS
+
+## Deployment
+
+- Vercel
+- Render
+- MongoDB Atlas
 
 ---
 
-# Installation
+# 🏗 Architecture
 
-## Clone
-
-```bash
-git clone <repository-url>
-
-cd codeshelf
 ```
-
-## Install
-
-```bash
-npm run install-all
+React Frontend
+        │
+        ▼
+Axios
+        │
+        ▼
+Express Server
+        │
+        ▼
+Routes
+        │
+        ▼
+Middleware
+        │
+        ▼
+Controllers
+        │
+        ▼
+Services
+        │
+        ▼
+Models
+        │
+        ▼
+MongoDB Atlas
 ```
 
 ---
+
+# 📂 Project Structure
+
+```
+CodeShelf
+│
+├── backend
+│   ├── config
+│   ├── controllers
+│   ├── middleware
+│   ├── models
+│   ├── routes
+│   ├── services
+│   ├── utils
+│   └── server.js
+│
+├── frontend
+│   ├── src
+│   │   ├── components
+│   │   ├── context
+│   │   ├── pages
+│   │   ├── services
+│   │   └── App.jsx
+│   └── package.json
+│
+├── screenshots
+│
+└── README.md
+```
+
+---
+
+# 🔐 Authentication Flow
+
+```
+User Login/Register
+        │
+        ▼
+JWT Generated
+        │
+        ▼
+Frontend Stores Token
+        │
+        ▼
+Authorization Header
+        │
+        ▼
+JWT Middleware
+        │
+        ▼
+Protected APIs
+```
+
+---
+
+# 📡 REST API
+
+## Authentication
+
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| POST | `/api/auth/register` | Register User |
+| POST | `/api/auth/login` | Login User |
+| GET | `/api/auth/me` | Get Current User |
+
+## Snippets
+
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| GET | `/api/snippets` | User Snippets |
+| GET | `/api/snippets/public` | Public Snippets |
+| POST | `/api/snippets` | Create Snippet |
+| PUT | `/api/snippets/:id` | Update Snippet |
+| DELETE | `/api/snippets/:id` | Delete Snippet |
+| PATCH | `/api/snippets/:id/favorite` | Toggle Favorite |
+
+---
+
+# ⚙️ Installation
+
+## Clone Repository
+
+```bash
+git clone <your-github-repository-url>
+cd CodeShelf
+```
 
 ## Backend
 
-Create
-
+```bash
+cd backend
+npm install
+npm run dev
 ```
-backend/.env
+
+## Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
 ```
 
-Example
+---
 
-```
+# 🔑 Environment Variables
+
+Backend `.env`
+
+```env
 PORT=5000
-MONGO_URI=your_mongodb_connection
-JWT_SECRET=your_secret
+
+MONGO_URI=your_mongodb_connection_string
+
+JWT_SECRET=your_secret_key
+
 CLIENT_URL=http://localhost:5173
 ```
 
 ---
 
-## Start
+# 🚀 Future Improvements
 
-```bash
-npm run dev
-```
-
-Backend
-
-```
-http://localhost:5000
-```
-
-Frontend
-
-```
-http://localhost:5173
-```
-
----
-
-# Project Structure
-
-```
-codeshelf
-
-backend/
-frontend/
-README.md
-```
-
----
-
-# Screenshots
-
-```
-screenshots/
-
-dashboard.png
-
-login.png
-
-explore.png
-
-editor.png
-```
-
----
-
-# Future Improvements
-
-- Collections
-- Folder Organization
-- AI Code Explanation
-- AI Refactoring
-- Markdown Notes
-- GitHub Sync
+- Snippet Collections
 - Version History
 - Team Collaboration
+- AI Code Explanation
+- Export / Import Snippets
+- Advanced Filters
+- Snippet Sharing Links
 
 ---
 
-# License
+# 👨‍💻 Author
 
-MIT
+**Tejender Singh**
+
+Built to demonstrate full-stack MERN development, REST API design, JWT authentication, MongoDB integration, and scalable backend architecture.
+
